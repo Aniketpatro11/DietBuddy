@@ -1,73 +1,56 @@
-# Welcome to your Lovable project
+# DietBuddy 🍏🤖  
 
-## Project info
+![DietBuddy Logo](https://res.cloudinary.com/daphwyhsb/image/upload/v1757594958/9cee1f42-f2af-44e6-98b1-854536b06912_u3aiei.png)  
 
-**URL**: https://lovable.dev/projects/8ed7ef03-930e-427a-8da6-43bff09785b3
+## Overview  
 
-## How can I edit this code?
+**DietBuddy** is an AI-powered dietary assistant that helps users make smarter nutrition choices.  
+It looks up your **age, diet preferences, health goals, genetic traits, and real-time health metrics** to create personalized diet suggestions.  
 
-There are several ways of editing your application.
+Unique to DietBuddy:  
+- **Blockchain-based food traceability**: scan a product → instantly view **certifications, trust scores, and batch details**.  
+- **Genomics Integration (CRISPR/23andMe-like data)**: upload your **raw genetic data (CSV)** and DietBuddy will interpret it (e.g., lactose intolerance, folate metabolism, caffeine metabolism, obesity/diabetes risk markers, etc.).  
+- **Dynamic Profile Update**: A button labeled **“Update in Profile”** lets you automatically sync genetic findings to your user profile. If different reports contain new traits, they are **added dynamically** and stored in a **custom notes section**.  
+- **IoT Smartwatch/Health Band Integration**: connect your wearable device to stream **real-time BP, glucose, heart rate, and other biomarkers** into DietBuddy. Based on live data, DietBuddy sends **instant food recommendations & warnings** (e.g., “⚠️ Your BP is high, avoid salty food today”).  
 
-**Use Lovable**
+Together, these features make DietBuddy a **next-gen AI nutritionist** that combines **genetics, AI, IoT, and blockchain trust**.  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8ed7ef03-930e-427a-8da6-43bff09785b3) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## Project Info  
 
-**Use your preferred IDE**
+- **Tech stack**:  
+  - Vite  
+  - TypeScript  
+  - React  
+  - shadcn-ui  
+  - Tailwind CSS  
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Features**:  
+  ✅ AI-powered dietary guidance  
+  ✅ Blockchain traceability with barcode scanner  
+  ✅ Certification & trust score viewer  
+  ✅ Personalized diet & flavor customization  
+  ✅ CRISPR & raw DNA data integration (CSV upload)  
+  ✅ Dynamic user profile updates from genetic reports  
+  ✅ IoT smartwatch integration for real-time health monitoring  
+  ✅ Instant AI alerts & recommendations based on live metrics  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## Getting Started (WSL Setup)  
+
+Run the following commands inside your **WSL terminal**:  
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Step 1: Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd nurture-quest-ai-main
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8ed7ef03-930e-427a-8da6-43bff09785b3) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
