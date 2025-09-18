@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* PlanMyDietary Design System - Health & Nutrition Focused */
+
+@layer base {
+  :root {
+    /* Core nutrition app theme - dark with health-focused greens */
+    --background: 0 0% 0%;
+    --background-secondary: 220 10% 6%;
+    --background-blur: 220 8% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Glass morphism cards */
+    --card: 220 8% 8%;
+    --card-hover: 220 6% 12%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 220 13% 15%;
+
+    --popover: 220 8% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Health-focused green palette */
+    --primary: 142 76% 36%;
+    --primary-glow: 142 86% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-muted: 142 40% 20%;
+
+    /* Purple accent for specific sections (#7327F5) */
+    --accent-purple: 267 91% 57%;
+    --accent-purple-glow: 267 100% 67%;
+    --accent-purple-foreground: 0 0% 100%;
+
+    /* Nutrition assistant UI */
+    --secondary: 220 8% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --secondary-glow: 220 15% 20%;
+
+    /* Status and feedback colors */
+    --success: 142 76% 36%;
+    --success-glow: 142 86% 45%;
+    --warning: 48 96% 53%;
+    --warning-glow: 48 100% 67%;
+    
+    --muted: 220 8% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 142 86% 45%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 15%;
+    --input: 220 13% 15%;
+    --input-hover: 220 10% 20%;
+    --ring: 142 76% 36%;
+
+    --radius: 0.75rem;
+
+    /* Gamification colors */
+    --health-points: 142 76% 36%;
+    --level-bronze: 30 100% 50%;
+    --level-silver: 220 10% 70%;
+    --level-gold: 48 96% 53%;
+    
+    /* Gradients for beautiful effects */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-glow)));
+    --gradient-success: linear-gradient(135deg, hsl(var(--success)), hsl(var(--success-glow)));
+    --gradient-purple: linear-gradient(135deg, hsl(var(--accent-purple)), hsl(var(--accent-purple-glow)));
+    --gradient-background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--background-secondary)) 100%);
+    
+    /* Shadows and glows */
+    --shadow-primary: 0 10px 30px -10px hsl(var(--primary) / 0.3);
+    --shadow-success: 0 5px 20px -5px hsl(var(--success) / 0.4);
+    --shadow-card: 0 4px 20px -4px hsl(220 13% 5% / 0.3);
+    --glow-primary: 0 0 30px hsl(var(--primary-glow) / 0.4);
+    --glow-success: 0 0 20px hsl(var(--success-glow) / 0.3);
+
+    /* Animation timings */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-background to-background-secondary text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    background: hsl(var(--card) / 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--card-border) / 0.3);
+  }
+
+  .glass-hover {
+    transition: var(--transition-smooth);
+  }
+  
+  .glass-hover:hover {
+    background: hsl(var(--card-hover) / 0.8);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+
+  /* Glow effects */
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-success {
+    box-shadow: var(--glow-success);
+  }
+
+  /* Smooth animations */
+  .animate-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  .animate-bounce-gentle {
+    transition: var(--transition-bounce);
+  }
+
+  /* Health points animation */
+  .health-point-gain {
+    animation: pointGain 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes pointGain {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  /* Level up effect */
+  .level-up {
+    animation: levelUp 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes levelUp {
+    0% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(2deg); }
+    50% { transform: scale(1.15) rotate(-2deg); }
+    75% { transform: scale(1.05) rotate(1deg); }
+    100% { transform: scale(1) rotate(0deg); }
+  }
+
+  /* Slide animations */
+  .slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-down {
+    animation: slideDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-in-left {
+    animation: slideInLeft 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .slide-in-right {
+    animation: slideInRight 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes slideInLeft {
+    0% { transform: translateX(-30px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  @keyframes slideInRight {
+    0% { transform: translateX(30px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  /* Fade animations */
+  .fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in-up {
+    animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .fade-in-down {
+    animation: fadeInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  @keyframes fadeInDown {
+    0% { transform: translateY(-20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Scale animations */
+  .scale-in {
+    animation: scaleIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .pulse-glow {
+    animation: pulseGlow 2s infinite;
+  }
+
+  @keyframes scaleIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  @keyframes pulseGlow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  }
+
+  /* Interactive hover effects */
+  .hover-lift {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-primary);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--glow-primary);
+  }
+
+  /* Staggered animations */
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+}
+
